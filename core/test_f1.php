@@ -4,6 +4,7 @@ require('../vendor/autoload.php');
 require('../lib/steamauth/steamauth.php');
 //include('../lib/steamauth/userInfo.php');
 include('../lib/call.php');
+include('../lib/twitch/SystemConfig_Twitch.php');
 $client = new \Zyberspace\SteamWebApi\Client($steamauth['apikey']);
 
 
@@ -33,7 +34,7 @@ if(!isset($_SESSION['steamid'])) {
                 <?php
                 
                 
-                $jsonGetVariable = '{"client_id":"q410nuileywm6ab5emah0be9ze4nxu"}';
+                $jsonGetVariable = '{"client_id":"'.returnTwitchClientID().'"}';
 
 		$response = CallAPI("GET","https://api.twitch.tv/api/steam/".$steamprofile['steamid']."",json_decode($jsonGetVariable));
  
