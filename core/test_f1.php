@@ -4,6 +4,7 @@ require('../vendor/autoload.php');
 require('../lib/steamauth/steamauth.php');
 //include('../lib/steamauth/userInfo.php');
 include('../lib/call.php');
+include('../lib/configReader.php');
 include('../lib/twitch/SystemConfig_Twitch.php');
 $client = new \Zyberspace\SteamWebApi\Client($steamauth['apikey']);
 
