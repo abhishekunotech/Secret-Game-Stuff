@@ -6,13 +6,16 @@ require('../lib/steamauth/steamauth.php');
 include('../lib/call.php');
 include('../lib/configReader.php');
 include('../lib/twitch/SystemConfig_Twitch.php');
-$client = new \Zyberspace\SteamWebApi\Client($steamauth['apikey']);
+
+
+
+$client = new \Zyberspace\SteamWebApi\Client(getSteamAPIKey());
 
 
 //$steamUser = new \Zyberspace\SteamWebApi\Interfaces\ICSGOServers_730($client);
 //$response = $steamUser->GetGameServersStatusV1();
 
-
+var_dump($_SESSION);
 
                 
 if(!isset($_SESSION['steamid'])) {
